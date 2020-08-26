@@ -12,4 +12,6 @@
 !gamemodes/zombiesurvival/
 !gamemodes/zombiesurvival/**
 !lua/
-
+!lua/autorun/
+!lua/autorun/server/
+!lua/autorun/server/workshop.lua
