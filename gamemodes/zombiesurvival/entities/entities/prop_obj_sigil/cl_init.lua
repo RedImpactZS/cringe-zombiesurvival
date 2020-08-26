@@ -66,8 +66,8 @@ function ENT:DrawTranslucent()
 	local corrupt = self:GetSigilCorrupted()
 	local r, g, b
 	if corrupt then
-		r = colsat
-		g = 0.75
+		r = 0.75
+		g = colsat
 		b = colsat
 	else
 		r = 0.15 + colsat

@@ -94,13 +94,13 @@ end
 
 -- How much ammo is considered one 'clip' of ammo? For use with setting up weapon defaults. Works directly with zs_survivalclips
 GM.AmmoCache = {}
-GM.AmmoCache["ar2"]							= 32		-- Assault rifles.
-GM.AmmoCache["alyxgun"]						= 24		-- Not used.
-GM.AmmoCache["pistol"]						= 14		-- Pistols.
-GM.AmmoCache["smg1"]						= 36		-- SMG's and some rifles.
-GM.AmmoCache["357"]							= 8			-- Rifles, especially of the sniper variety.
-GM.AmmoCache["xbowbolt"]					= 8			-- Crossbows
-GM.AmmoCache["buckshot"]					= 12		-- Shotguns
+GM.AmmoCache["ar2"]							= 3		-- Assault rifles.
+GM.AmmoCache["alyxgun"]						= 2		-- Not used.
+GM.AmmoCache["pistol"]						= 1		-- Pistols.
+GM.AmmoCache["smg1"]						= 3		-- SMG's and some rifles.
+GM.AmmoCache["357"]							= 1			-- Rifles, especially of the sniper variety.
+GM.AmmoCache["xbowbolt"]					= 1			-- Crossbows
+GM.AmmoCache["buckshot"]					= 1		-- Shotguns
 GM.AmmoCache["ar2altfire"]					= 1			-- Not used.
 GM.AmmoCache["slam"]						= 1			-- Force Field Emitters.
 GM.AmmoCache["rpg_round"]					= 1			-- Not used. Rockets?
@@ -110,7 +110,7 @@ GM.AmmoCache["sniperpenetratedround"]		= 1			-- Remote Det pack.
 GM.AmmoCache["grenade"]						= 1			-- Grenades.
 GM.AmmoCache["thumper"]						= 1			-- Gun turret.
 GM.AmmoCache["gravity"]						= 1			-- Unused.
-GM.AmmoCache["battery"]						= 23		-- Used with the Medical Kit.
+GM.AmmoCache["battery"]						= 2		-- Used with the Medical Kit.
 GM.AmmoCache["gaussenergy"]					= 2			-- Nails used with the Carpenter's Hammer.
 GM.AmmoCache["combinecannon"]				= 1			-- Not used.
 GM.AmmoCache["airboatgun"]					= 1			-- Arsenal crates.
@@ -120,9 +120,9 @@ GM.AmmoCache["spotlamp"]					= 1
 GM.AmmoCache["manhack"]						= 1
 GM.AmmoCache["repairfield"]					= 1
 GM.AmmoCache["zapper"]						= 1
-GM.AmmoCache["pulse"]						= 30
+GM.AmmoCache["pulse"]						= 3
 GM.AmmoCache["impactmine"]					= 3
-GM.AmmoCache["chemical"]					= 20
+GM.AmmoCache["chemical"]					= 2
 GM.AmmoCache["flashbomb"]					= 1
 GM.AmmoCache["turret_buckshot"]				= 1
 GM.AmmoCache["turret_assault"]				= 1
@@ -720,7 +720,7 @@ GM.EndGameTime = 45
 GM.SurvivalClips = 4 --2
 
 -- How long do humans have to wait before being able to get more ammo from a resupply box?
-GM.ResupplyBoxCooldown = 60
+GM.ResupplyBoxCooldown = 1
 
 -- Put your unoriginal, 5MB Rob Zombie and Metallica music here.
 GM.LastHumanSound = Sound("zombiesurvival/lasthuman.ogg")
@@ -735,18 +735,18 @@ GM.HumanWinSound = Sound("zombiesurvival/music_win.ogg")
 GM.DeathSound = Sound("zombiesurvival/human_death_stinger.ogg")
 
 -- Fetch map profiles and node profiles from noxiousnet database?
-GM.UseOnlineProfiles = true
+GM.UseOnlineProfiles = false
 
 -- This multiplier of points will save over to the next round. 1 is full saving. 0 is disabled.
 -- Setting this to 0 will not delete saved points and saved points do not "decay" if this is less than 1.
-GM.PointSaving = 0
+GM.PointSaving = 9999
 
 -- Lock item purchases to waves. Tier 2 items can only be purchased on wave 2, tier 3 on wave 3, etc.
 -- HIGHLY suggested that this is on if you enable point saving. Always false if objective map, zombie escape, classic mode, or wave number is changed by the map.
-GM.LockItemTiers = false
+GM.LockItemTiers = true
 
 -- Don't save more than this amount of points. 0 for infinite.
-GM.PointSavingLimit = 0
+GM.PointSavingLimit = 1000
 
 -- For Classic Mode
 GM.WaveIntermissionLengthClassic = 20
@@ -758,7 +758,7 @@ GM.MaxPoisonDamage = 50
 GM.MaxBleedDamage = 50
 
 -- Give humans this many points when the wave ends.
-GM.EndWavePointsBonus = 5
+GM.EndWavePointsBonus = 30
 
 -- Also give humans this many points when the wave ends, multiplied by (wave - 1)
-GM.EndWavePointsBonusPerWave = 1
+GM.EndWavePointsBonusPerWave = 2

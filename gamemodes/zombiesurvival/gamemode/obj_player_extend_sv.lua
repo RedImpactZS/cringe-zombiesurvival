@@ -955,6 +955,8 @@ function meta:Resupply(owner, obj)
 			self:Give(GAMEMODE.Food[math.random(#GAMEMODE.Food)])
 		end
 
+		self:TakeDamage(1)
+
 		if self ~= owner and owner:IsValidHuman() then
 			if obj:GetClass() == "prop_resupplybox" then
 				owner.ResupplyBoxUsedByOthers = owner.ResupplyBoxUsedByOthers + 1

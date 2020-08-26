@@ -101,8 +101,8 @@ CARRY_SPEEDLOSS_PERKG = 1.3
 -- but can never be slower than this.
 CARRY_SPEEDLOSS_MINSPEED = 88
 
-GM.MaxLegDamage = 3
-GM.MaxArmDamage = 3
+GM.MaxLegDamage = 30
+GM.MaxArmDamage = 30
 
 GM.UtilityKey = IN_SPEED
 GM.MenuKey = IN_WALK -- I would use the spawn menu but it has no IN_ key assignment.

@@ -6,7 +6,7 @@ function ENT:Initialize()
 	self:DrawShadow(false)
 	self:SetRenderFX(kRenderFxDistort)
 
-	self:SetModel("models/props_wasteland/medbridge_post01.mdl")
+	self:SetModel("models/kleiner.mdl")
 	self:PhysicsInitBox(Vector(-16.285, -16.285, -0.29) * self.ModelScale, Vector(16.285, 16.285, 104.29) * self.ModelScale)
 	self:SetUseType(SIMPLE_USE)
 
