@@ -1,0 +1,15 @@
+*
+!.gitignore
+!.gitmodules
+!particles/
+!particles/**
+!addons/
+!addons/**
+!resource/
+!resource/fonts
+!resource/fonts/**
+!gamemodes/
+!gamemodes/zombiesurvival/
+!gamemodes/zombiesurvival/**
+!lua/
+
