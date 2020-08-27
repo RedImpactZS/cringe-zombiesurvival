@@ -1,0 +1,8 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/weapons/nadefire/grenade body"
+	"$phong" "1"
+	"$phongexponent" "35"
+	"$phongboost"	"10"
+	"$phongfresnelranges"	"[.4 1.3 5.1]"
+}

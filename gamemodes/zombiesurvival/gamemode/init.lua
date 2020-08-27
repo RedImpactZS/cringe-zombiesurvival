@@ -214,6 +214,23 @@ function GM:TryHumanPickup(pl, entity)
 end
 
 function GM:AddResources()
+
+	resource.AddFile("sound/weapons/explosions/grenade001.wav")
+	resource.AddFile("sound/weapons/explosions/grenade002.wav")
+	resource.AddFile("sound/weapons/explosions/incendiarygrenade.wav")
+
+	for _, filename in pairs(file.Find("materials/models/weapons/nadefire/*.vmt", "GAME")) do
+		resource.AddFile("materials/models/weapons/nadefire/"..filename)
+	end
+
+	for _, filename in pairs(file.Find("materials/models/weapons/nadefire/*.vtf", "GAME")) do
+		resource.AddFile("materials/models/weapons/nadefire/"..filename)
+	end
+
+	for _, filename in pairs(file.Find("models/weapons/*.mdl", "GAME")) do
+		resource.AddFile("models/weapons/"..filename)
+	end
+
 	resource.AddFile("resource/fonts/typenoksidi.ttf")
 	resource.AddFile("resource/fonts/hidden.ttf")
 	resource.AddFile("resource/fonts/ghoulfriaoe.ttf")

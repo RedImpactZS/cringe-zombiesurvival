@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/nadefire/w_grenadesheet"
+	"$model" 1
+}

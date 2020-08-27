@@ -1,0 +1,9 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/weapons/nadefire/grenadetop"
+	"$bumpmap" "models/weapons/nadefire/top_normal"
+	"$phong" "1"
+	"$phongexponent" "35"
+	"$phongboost"	"10"
+	"$phongfresnelranges"	"[.4 1.3 5.1]"
+}

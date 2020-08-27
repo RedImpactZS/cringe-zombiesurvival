@@ -20,3 +20,9 @@
 !lua/ulx/**
 !lua/ulib/
 !lua/ulib/**
+!models/
+!models/**
+!materials/
+!materials/**
+!sound/
+!sound/**
