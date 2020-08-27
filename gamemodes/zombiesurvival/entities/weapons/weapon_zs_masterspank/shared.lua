@@ -42,7 +42,7 @@ SWEP.TracerName = "tracer_spark"
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_SHORT_TEAM_HEAT, -0.01, 1)
 
 function SWEP:Initialize()
-	self.FiringSound = CreateSound(self, "^thrusters/rocket02.wav")
+	self.FiringSound = CreateSound(self, "weapons/zs_masterspunk/master_spark.ogg")
 	self.FiringSound:SetSoundLevel(85)
 
 	self.ChargingSound = CreateSound(self, "^weapons/physcannon/energy_sing_loop4.wav")
