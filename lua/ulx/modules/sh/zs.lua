@@ -152,6 +152,7 @@ givepoints:help( "Give points to target(s)" )
 
 
 function ulx.giveweapon( caller, targets, weapon, giveAmmo )
+	hook.Add("PlayerCanPickupWeapon", "PlayerCanPickupWeapon.AcceptAll", function(pl, ent) return true end)
 	local affected = {}
 
 	for i = 1, #targets do
@@ -167,6 +168,7 @@ function ulx.giveweapon( caller, targets, weapon, giveAmmo )
 	end
 
 	ulx.fancyLogAdmin( caller, "#A gave #s to #T", weapon, targets )
+	hook.Remove("PlayerCanPickupWeapon", "PlayerCanPickupWeapon.AcceptAll")
 end
 
 

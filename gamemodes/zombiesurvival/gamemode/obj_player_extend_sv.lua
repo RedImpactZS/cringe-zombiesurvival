@@ -962,7 +962,7 @@ function meta:Resupply(owner, obj)
 				owner.ResupplyBoxUsedByOthers = owner.ResupplyBoxUsedByOthers + 1
 			end
 
-			owner:AddPoints(0.15, nil, nil, true)
+			owner:AddPoints(0.01, nil, nil, true)
 
 			net.Start("zs_commission")
 				net.WriteEntity(obj)
