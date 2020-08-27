@@ -59,8 +59,6 @@ include("sh_sigils.lua")
 include("sh_channel.lua")
 include("sh_weaponquality.lua")
 
-include("noxapi/noxapi.lua")
-
 include("vault/shared.lua")
 
 include("workshopfix.lua")
@@ -76,7 +74,7 @@ GM.EndRound = false
 GM.StartingWorth = 100
 GM.ZombieVolunteers = {}
 
-team.SetUp(TEAM_ZOMBIE, "The Undead", Color(0, 255, 0, 255))
+team.SetUp(TEAM_ZOMBIE, "The Undead", Color(255, 0, 0, 255))
 team.SetUp(TEAM_SURVIVORS, "Survivors", Color(0, 160, 255, 255))
 
 local validmodels = player_manager.AllValidModels()
@@ -823,9 +821,6 @@ function GM:IsSpecialPerson(pl, image)
 	elseif pl:IsAdmin() then
 		img = "VGUI/servers/icon_robotron"
 		tooltip = "Admin"
-	elseif pl:IsNoxSupporter() then
-		img = "noxiousnet/noxicon.png"
-		tooltip = "Nox Supporter"
 	end
 
 	if img then

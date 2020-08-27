@@ -13,5 +13,10 @@
 !gamemodes/zombiesurvival/**
 !lua/
 !lua/autorun/
+!lua/autorun/ulib_init.lua
 !lua/autorun/server/
 !lua/autorun/server/workshop.lua
+!lua/ulx/
+!lua/ulx/**
+!lua/ulib/
+!lua/ulib/**

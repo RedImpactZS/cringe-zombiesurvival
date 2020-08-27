@@ -600,7 +600,7 @@ function GM:DrawFearMeter(power, screenscale)
 				end
 				healthfrac = health / maxhealth
 				if corrupt then
-					surface_SetDrawColor((255 - damageflash) * healthfrac, damageflash * healthfrac, 0, 220)
+					surface_SetDrawColor(220 ,(255 - damageflash) * healthfrac, damageflash * healthfrac, 220)
 				else
 					surface_SetDrawColor((255 - damageflash) * healthfrac, damageflash * healthfrac, 220, 220)
 				end
@@ -1231,7 +1231,7 @@ function GM:DrawSigilIndicators()
 			render_FogMode(0)
 
 			if corrupted then
-				surface_SetDrawColor(255 - damageflash, damageflash, 0, alpha)
+				surface_SetDrawColor(255,255 - damageflash, damageflash, alpha)
 			else
 				surface_SetDrawColor(damageflash, 255, damageflash, alpha)
 			end
