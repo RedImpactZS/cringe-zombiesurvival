@@ -955,7 +955,7 @@ function meta:Resupply(owner, obj)
 			self:Give(GAMEMODE.Food[math.random(#GAMEMODE.Food)])
 		end
 		
-		if not ( self.Stowage and math.Round(2) == 1 ) then
+		if not ( self.Stowage and math.random(2) == 1 ) then
 		self:TakeDamage(1)
 		end
 
