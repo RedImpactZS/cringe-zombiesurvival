@@ -1,5 +1,5 @@
-SWEP.PrintName = "Sigil Fragment"
-SWEP.Description = "A mysterious stone that holds some power over the world.\nReturns you to any uncorrupted Sanity Sigil that you're pointing towards."
+SWEP.PrintName = "Timur Fragment"
+SWEP.Description = "A mysterious stone that holds some power over the world.\nReturns you to any uncorrupted Sanity Timur that you're pointing towards."
 
 SWEP.Base = "weapon_zs_basemelee"
 
