@@ -83,8 +83,8 @@ GM:SetSkillModifierFunction(SKILLMOD_DEPLOYABLE_PACKTIME_MUL, function(pl, amoun
 	pl.DeployablePackTimeMul = math.Clamp(amount + 1.0, 0.01, 10.0)
 end)
 
-GM:SetSkillModifierFunction(SKILLMOD_RESUPPLY_DELAY_MUL, function(pl, amount)
-	pl.ResupplyDelayMul = math.Clamp(amount + 1.0, 0.01, 10.0)
+GM:SetSkillModifierFunction(SKILLMOD_RESUPPLY_DELAY, function(pl, amount)
+	pl.ResupplyDelay = math.Clamp(amount, 0.01, 100.0)
 end)
 
 GM:SetSkillModifierFunction(SKILLMOD_FIELD_RANGE_MUL, function(pl, amount)
@@ -122,7 +122,7 @@ GM:AddSkillModifier(SKILL_AVIATOR, SKILLMOD_CONTROLLABLE_HEALTH_MUL, -0.25)
 GM:AddSkillModifier(SKILL_LIGHTCONSTRUCT, SKILLMOD_DEPLOYABLE_HEALTH_MUL, -0.25)
 GM:AddSkillModifier(SKILL_LIGHTCONSTRUCT, SKILLMOD_DEPLOYABLE_PACKTIME_MUL, -0.25)
 
-GM:AddSkillModifier(SKILL_FORAGER, SKILLMOD_RESUPPLY_DELAY_MUL, 0.2)
+GM:AddSkillModifier(SKILL_FORAGER, SKILLMOD_RESUPPLY_DELAY, 0.2)
 
 GM:AddSkillModifier(SKILL_FIELDAMP, SKILLMOD_FIELD_RANGE_MUL, -0.4)
 GM:AddSkillModifier(SKILL_FIELDAMP, SKILLMOD_FIELD_DELAY_MUL, -0.2)

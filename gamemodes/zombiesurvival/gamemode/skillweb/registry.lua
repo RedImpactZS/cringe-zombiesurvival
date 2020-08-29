@@ -288,7 +288,7 @@ SKILLMOD_DEPLOYABLE_PACKTIME_MUL = 37
 SKILLMOD_DRONE_SPEED_MUL = 38
 SKILLMOD_DRONE_CARRYMASS_MUL = 39
 SKILLMOD_MEDGUN_FIRE_DELAY_MUL = 40
-SKILLMOD_RESUPPLY_DELAY_MUL = 41
+SKILLMOD_RESUPPLY_DELAY = 41
 SKILLMOD_FIELD_RANGE_MUL = 42
 SKILLMOD_FIELD_DELAY_MUL = 43
 SKILLMOD_DRONE_GUN_RANGE_MUL = 44
@@ -565,7 +565,7 @@ GM:AddSkill(SKILL_D_NOODLEARMS, "Debuff: Noodle Arms", GOOD.."+5 starting Worth\
 																-7,			2,					{}, TREE_BUILDINGTREE)
 GM:AddSkill(SKILL_INSTRUMENTS, "Instruments", GOOD.."+5% turret range",
 																-10,		-3,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_STOWAGE, 	"Stowage", GOOD.."Resupply usages build up when you're not there\n"..BAD.."+15% resupply delay",
+GM:AddSkill(SKILL_STOWAGE, 	"Stowage", GOOD.."Resupply usages build up when you're not there\n"..GOOD.."You have 50% chance to not receive damage upon taking ammo from resupply box\n"..BAD.."+1 second delay to resupply recharge time",
 																4,			-3,					{}, TREE_BUILDINGTREE)
 
 -- Gunnery Tree
@@ -1119,7 +1119,7 @@ GM:AddSkillFunction(SKILL_D_NOODLEARMS, function(pl, active)
 end)
 
 GM:AddSkillModifier(SKILL_D_PALSY, SKILLMOD_WORTH, 10)
-GM:AddSkillModifier(SKILL_D_PALSY, SKILLMOD_RESUPPLY_DELAY_MUL, -0.03)
+GM:AddSkillModifier(SKILL_D_PALSY, SKILLMOD_RESUPPLY_DELAY, -0.25)
 GM:AddSkillFunction(SKILL_D_PALSY, function(pl, active)
 	pl.HasPalsy = active
 end)
@@ -1148,7 +1148,7 @@ GM:AddSkillModifier(SKILL_D_WEAKNESS, SKILLMOD_ENDWAVE_POINTS, 1)
 GM:AddSkillModifier(SKILL_D_WEAKNESS, SKILLMOD_HEALTH, -45)
 
 GM:AddSkillModifier(SKILL_D_WIDELOAD, SKILLMOD_WORTH, 20)
-GM:AddSkillModifier(SKILL_D_WIDELOAD, SKILLMOD_RESUPPLY_DELAY_MUL, -0.05)
+GM:AddSkillModifier(SKILL_D_WIDELOAD, SKILLMOD_RESUPPLY_DELAY, -0.5)
 GM:AddSkillFunction(SKILL_D_WIDELOAD, function(pl, active)
 	pl.NoGhosting = active
 end)
@@ -1260,7 +1260,7 @@ GM:AddSkillModifier(SKILL_TAUT, SKILLMOD_PROP_CARRY_SLOW_MUL, 0.4)
 
 GM:AddSkillModifier(SKILL_TURRETOVERLOAD, SKILLMOD_TURRET_RANGE_MUL, -0.3)
 
-GM:AddSkillModifier(SKILL_STOWAGE, SKILLMOD_RESUPPLY_DELAY_MUL, 0.15)
+GM:AddSkillModifier(SKILL_STOWAGE, SKILLMOD_RESUPPLY_DELAY, 1)
 GM:AddSkillFunction(SKILL_STOWAGE, function(pl, active)
 	pl.Stowage = active
 end)

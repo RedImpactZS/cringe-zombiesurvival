@@ -927,7 +927,7 @@ function meta:Resupply(owner, obj)
 	end
 
 	if not stowage then
-		self.NextResupplyUse = CurTime() + GAMEMODE.ResupplyBoxCooldown * (self.ResupplyDelayMul or 1) * (stockpiling and 2.12 or 1)
+		self.NextResupplyUse = CurTime() + (GAMEMODE.ResupplyBoxCooldown + (self.ResupplyDelay or 0)) * (stockpiling and 2.12 or 1)
 
 		net.Start("zs_nextresupplyuse")
 			net.WriteFloat(self.NextResupplyUse)
@@ -936,7 +936,7 @@ function meta:Resupply(owner, obj)
 		self.StowageCaches = self.StowageCaches - 1
 
 		net.Start("zs_stowagecaches")
-			net.WriteInt(self.StowageCaches, 8)
+			net.WriteUInt(self.StowageCaches, 16)
 		net.Send(self)
 	end
 
@@ -954,8 +954,10 @@ function meta:Resupply(owner, obj)
 		if self:IsSkillActive(SKILL_FORAGER) and math.random(4) == 1 and #GAMEMODE.Food > 0 then
 			self:Give(GAMEMODE.Food[math.random(#GAMEMODE.Food)])
 		end
-
+		
+		if not ( self.Stowage and math.round(2) == 1 ) then
 		self:TakeDamage(1)
+		end
 
 		if self ~= owner and owner:IsValidHuman() then
 			if obj:GetClass() == "prop_resupplybox" then
@@ -967,7 +969,7 @@ function meta:Resupply(owner, obj)
 			net.Start("zs_commission")
 				net.WriteEntity(obj)
 				net.WriteEntity(self)
-				net.WriteFloat(0.15)
+				net.WriteFloat(0.1)
 			net.Send(owner)
 		end
 	end

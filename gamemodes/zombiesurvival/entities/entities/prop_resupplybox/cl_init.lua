@@ -86,5 +86,5 @@ net.Receive("zs_nextresupplyuse", function(length)
 end)
 
 net.Receive("zs_stowagecaches", function(length)
-	MySelf.StowageCaches = net.ReadInt(8)
+	MySelf.StowageCaches = net.ReadUInt(16)
 end)

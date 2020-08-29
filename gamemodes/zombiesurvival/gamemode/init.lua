@@ -1321,7 +1321,7 @@ function GM:Think()
 				if pl:IsSkillActive(SKILL_STOWAGE) and self:GetWave() > 0 and time > (pl.NextResupplyUse or 0) then
 					local stockpiling = pl:IsSkillActive(SKILL_STOCKPILE)
 
-					pl.NextResupplyUse = time + self.ResupplyBoxCooldown * (pl.ResupplyDelayMul or 1) * (stockpiling and 2.12 or 1)
+					pl.NextResupplyUse = time + (self.ResupplyBoxCooldown + (pl.ResupplyDelay or 0) ) * (stockpiling and 2.12 or 1)
 					pl.StowageCaches = (pl.StowageCaches or 0) + (stockpiling and 2 or 1)
 
 					net.Start("zs_nextresupplyuse")
@@ -1329,7 +1329,7 @@ function GM:Think()
 					net.Send(pl)
 
 					net.Start("zs_stowagecaches")
-						net.WriteInt(pl.StowageCaches, 8)
+						net.WriteUInt(pl.StowageCaches, 16)
 					net.Send(pl)
 				end
 			end
