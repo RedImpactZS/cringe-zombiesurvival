@@ -247,6 +247,7 @@ SKILL_ROBUST = 145
 SKILL_STOWAGE = 146
 SKILL_TRUEWOOISM = 147
 SKILL_UNBOUND = 148
+SKILL_SANIC = 149
 
 SKILLMOD_HEALTH = 1
 SKILLMOD_SPEED = 2
@@ -400,6 +401,8 @@ GM:AddSkill(SKILL_SANGUINE, "Sanguine", GOOD.."+11 maximum blood armor\n"..BAD..
 GM:AddSkill(SKILL_ANTIGEN, "Antigen", GOOD.."+5% blood armor damage absorption\n"..BAD.."-3 maximum health",
 																-2,			4,					{}, TREE_HEALTHTREE)
 -- Speed Tree
+GM:AddSkill(SKILL_SANIC, "SANIC", GOOD.."+420 movement speed\n"..BAD.."-99.31 maximum health",
+																-2,			6,					{SKILL_NONE}, TREE_SPEEDTREE)
 GM:AddSkill(SKILL_SPEED1, "Speed I", GOOD.."+0.75 movement speed\n"..BAD.."-1 maximum health",
 																-4,			6,					{SKILL_NONE, SKILL_SPEED2}, TREE_SPEEDTREE)
 GM:AddSkill(SKILL_SPEED2, "Speed II", GOOD.."+1.5 movement speed\n"..BAD.."-2 maximum health",
@@ -959,6 +962,9 @@ GM:SetSkillModifierFunction(SKILLMOD_EXP_DAMAGE_MUL, GM:MkGenericMod("ExplosiveD
 GM:SetSkillModifierFunction(SKILLMOD_PROJECTILE_DAMAGE_MUL, GM:MkGenericMod("ProjectileDamageMul"))
 GM:SetSkillModifierFunction(SKILLMOD_TURRET_RANGE_MUL, GM:MkGenericMod("TurretRangeMul"))
 GM:SetSkillModifierFunction(SKILLMOD_AIM_SHAKE_MUL, GM:MkGenericMod("AimShakeMul"))
+
+GM:AddSkillModifier(SKILL_SANIC, SKILLMOD_SPEED, 420)
+GM:AddSkillModifier(SKILL_SANIC, SKILLMOD_HEALTH, -99.31)
 
 GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_SPEED, 0.75)
 GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_HEALTH, -1)
