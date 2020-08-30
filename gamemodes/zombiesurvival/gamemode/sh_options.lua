@@ -747,7 +747,7 @@ GM.PointSaving = 9999
 
 -- Lock item purchases to waves. Tier 2 items can only be purchased on wave 2, tier 3 on wave 3, etc.
 -- HIGHLY suggested that this is on if you enable point saving. Always false if objective map, zombie escape, classic mode, or wave number is changed by the map.
-GM.LockItemTiers = true
+GM.LockItemTiers = false
 
 -- Don't save more than this amount of points. 0 for infinite.
 GM.PointSavingLimit = 1000
