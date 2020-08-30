@@ -1,0 +1,19 @@
+VertexLitGeneric
+{
+	$basetexture "models/weapons/interceptor/text_2_dif"
+	$bumpmap "models/weapons/interceptor/text_2_norm"
+
+	$envmap "env_cubemap"
+	$envmaptint "[0.01 0.01 0.01]"
+	$envmapsaturation 0.06
+
+	$phong 1
+	$phongfresnelranges "[1 1 1]"
+	$phongexponent 5
+	$phongboost 0.2
+	$phongalbedoboost 0.64
+
+	$selfillum 1
+	$selfillummask "models/weapons/interceptor/text_2_em"
+	$selfillumtint "[4.33 1.38 1.33]"
+}

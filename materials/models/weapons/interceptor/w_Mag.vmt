@@ -1,0 +1,15 @@
+VertexLitGeneric
+{
+	$basetexture "models/weapons/interceptor/Mag_dif"
+
+	$envmap "env_cubemap"
+	$envmaptint "[0.01 0.01 0.01]"
+	$envmapsaturation 0.06
+
+	$phong 1
+	$phongfresnelranges "[1 1 1]"
+	$halflambert 1
+	$phongexponent 61
+	$phongboost 0.44
+	$phongalbedoboost 4.05
+}

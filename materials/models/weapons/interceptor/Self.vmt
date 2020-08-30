@@ -1,0 +1,8 @@
+VertexLitGeneric
+{
+	$basetexture "models/weapons/interceptor/Self_dif"
+
+	$selfillum 1
+	$selfillumtint "[30 10 5]"
+	$selfillummask "models/weapons/interceptor/Self_dif"
+}

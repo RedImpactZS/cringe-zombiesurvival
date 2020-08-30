@@ -215,9 +215,13 @@ end
 
 function GM:AddResources()
 
-	resource.AddFile("sound/weapons/explosions/grenade001.wav")
-	resource.AddFile("sound/weapons/explosions/grenade002.wav")
-	resource.AddFile("sound/weapons/explosions/incendiarygrenade.wav")
+	for _, filename in pairs(file.Find("sound/weapons/explosions/*.wav", "GAME")) do
+		resource.AddFile("sound/weapons/explosions/"..filename)
+	end
+	
+	for _, filename in pairs(file.Find("sound/weapons/interceptor/*.wav", "GAME")) do
+		resource.AddFile("sound/weapons/interceptor/"..filename)
+	end
 
 	for _, filename in pairs(file.Find("materials/models/weapons/nadefire/*.vmt", "GAME")) do
 		resource.AddFile("materials/models/weapons/nadefire/"..filename)
@@ -225,6 +229,18 @@ function GM:AddResources()
 
 	for _, filename in pairs(file.Find("materials/models/weapons/nadefire/*.vtf", "GAME")) do
 		resource.AddFile("materials/models/weapons/nadefire/"..filename)
+	end
+	
+	for _, filename in pairs(file.Find("materials/models/weapons/interceptor/*.vmt", "GAME")) do
+		resource.AddFile("materials/models/weapons/interceptor/"..filename)
+	end
+
+	for _, filename in pairs(file.Find("materials/models/weapons/interceptor/*.vtf", "GAME")) do
+		resource.AddFile("materials/models/weapons/interceptor/"..filename)
+	end
+	
+	for _, filename in pairs(file.Find("models/weapons/interceptor/*.mdl", "GAME")) do
+		resource.AddFile("models/weapons/interceptor/"..filename)
 	end
 
 	for _, filename in pairs(file.Find("models/weapons/*.mdl", "GAME")) do
@@ -248,6 +264,10 @@ function GM:AddResources()
 	end
 
 	for _, filename in pairs(file.Find("materials/zombiesurvival/killicons/*.vmt", "GAME")) do
+		resource.AddFile("materials/zombiesurvival/killicons/"..filename)
+	end
+	
+	for _, filename in pairs(file.Find("materials/zombiesurvival/killicons/*.vtf", "GAME")) do
 		resource.AddFile("materials/zombiesurvival/killicons/"..filename)
 	end
 

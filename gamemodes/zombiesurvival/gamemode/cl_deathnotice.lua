@@ -38,6 +38,10 @@ if not killicon.GetFont then
 	end
 end
 
+-- new icons goes here
+
+killicon.Add("weapon_zs_interceptor", "zombiesurvival/killicons/weapon_zs_plasmarifle")
+
 killicon.AddFont("default", "zsdeathnoticecs", "C")
 killicon.AddFont("suicide", "zsdeathnoticecs", "C")
 killicon.AddFont("player", "zsdeathnoticecs", "C")
