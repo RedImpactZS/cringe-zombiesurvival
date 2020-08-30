@@ -154,7 +154,7 @@ function ulx.giveammo(calling_ply, amount, ammotype, target_plys)
 	local affected_plys = {}
 	for i=1, #target_plys do
 		local v = target_plys[ i ]
-		if v:IsValid() and then
+		if v:IsValid() then
 			v:GiveAmmo(amount, ammotype)
 		end
 	end
