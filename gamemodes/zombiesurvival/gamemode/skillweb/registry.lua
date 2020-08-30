@@ -59,7 +59,16 @@ end
 
 function GM:AddSkillModifier(skillid, modifier, amount)
 	self.SkillModifiers[skillid] = self.SkillModifiers[skillid] or {}
-	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
+
+	tempAmount = (self.SkillModifiers[skillid][modifier] or 0) + amount
+
+	if modifier == SKILLMOD_HEALTH then
+		if tempAmount <= 0 then
+			tempAmount = 1
+		end
+	end
+
+	self.SkillModifiers[skillid][modifier] = tempAmount
 end
 
 function GM:AddSkillFunction(skillid, func)
@@ -964,7 +973,7 @@ GM:SetSkillModifierFunction(SKILLMOD_TURRET_RANGE_MUL, GM:MkGenericMod("TurretRa
 GM:SetSkillModifierFunction(SKILLMOD_AIM_SHAKE_MUL, GM:MkGenericMod("AimShakeMul"))
 
 GM:AddSkillModifier(SKILL_SANIC, SKILLMOD_SPEED, 420)
-GM:AddSkillModifier(SKILL_SANIC, SKILLMOD_HEALTH, -99.31)
+GM:AddSkillModifier(SKILL_SANIC, SKILLMOD_HEALTH, -99)
 
 GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_SPEED, 0.75)
 GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_HEALTH, -1)
