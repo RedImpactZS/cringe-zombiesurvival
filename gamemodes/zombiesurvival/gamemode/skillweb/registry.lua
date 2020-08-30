@@ -63,8 +63,8 @@ function GM:AddSkillModifier(skillid, modifier, amount)
 	tempAmount = (self.SkillModifiers[skillid][modifier] or 0) + amount
 
 	if modifier == SKILLMOD_HEALTH then
-		if tempAmount <= 0 then
-			tempAmount = 1
+		if tempAmount <= -100 then
+			tempAmount = -99
 		end
 	end
 
@@ -410,7 +410,7 @@ GM:AddSkill(SKILL_SANGUINE, "Sanguine", GOOD.."+11 maximum blood armor\n"..BAD..
 GM:AddSkill(SKILL_ANTIGEN, "Antigen", GOOD.."+5% blood armor damage absorption\n"..BAD.."-3 maximum health",
 																-2,			4,					{}, TREE_HEALTHTREE)
 -- Speed Tree
-GM:AddSkill(SKILL_SANIC, "SANIC", GOOD.."+420 movement speed\n"..BAD.."-99.31 maximum health",
+GM:AddSkill(SKILL_SANIC, "SANIC", GOOD.."+420 movement speed\n"..BAD.."-99 maximum health",
 																-2,			6,					{SKILL_NONE}, TREE_SPEEDTREE)
 GM:AddSkill(SKILL_SPEED1, "Speed I", GOOD.."+0.75 movement speed\n"..BAD.."-1 maximum health",
 																-4,			6,					{SKILL_NONE, SKILL_SPEED2}, TREE_SPEEDTREE)
