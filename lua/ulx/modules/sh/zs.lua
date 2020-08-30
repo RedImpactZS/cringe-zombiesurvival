@@ -154,13 +154,13 @@ function ulx.giveammo(calling_ply, amount, ammotype, target_plys)
 	local affected_plys = {}
 	for i=1, #target_plys do
 		local v = target_plys[ i ]
-		if v:IsValid() and v:Team() == TEAM_HUMAN and v:Alive() then
+		if v:IsValid() and then
 			v:GiveAmmo(amount, ammotype)
 		end
 	end
 end
 
-local giveammo = ulx.command("Zombie Survival", "ulx giveammo", ulx.giveammo, "!giveammo" )
+local giveammo = ulx.command("ZS ULX Commands", "ulx giveammo", ulx.giveammo, "!giveammo" )
 giveammo:addParam{ type=ULib.cmds.NumArg, hint="Ammo Amount"}
 giveammo:addParam{ type=ULib.cmds.StringArg, hint="Ammo Type"}
 giveammo:addParam{ type=ULib.cmds.PlayersArg }
@@ -245,7 +245,7 @@ function ulx.respawn( calling_ply, target_plys )
 
     ulx.fancyLogAdmin( calling_ply, "#A respawn #T", affected_plys )
 end
-local respawn = ulx.command( "Zombie Survival", "ulx respawn", ulx.respawn, "!respawn" )
+local respawn = ulx.command( "ZS ULX Commands", "ulx respawn", ulx.respawn, "!respawn" )
 respawn:addParam{ type=ULib.cmds.PlayersArg }
 respawn:defaultAccess( ULib.ACCESS_ADMIN )
 respawn:help( "Redeems target(s)." )
@@ -254,7 +254,7 @@ function ulx.restartmap(calling_ply)
 	ulx.fancyLogAdmin( calling_ply, "#A restarted the map.")
 	game.ConsoleCommand("changelevel "..string.format(game.GetMap(),".bsp").."\n")
 end
-local restartmap = ulx.command("Zombie Survival", "ulx restartmap", ulx.restartmap, "!restartmap")
+local restartmap = ulx.command("ZS ULX Commands", "ulx restartmap", ulx.restartmap, "!restartmap")
 restartmap:defaultAccess( ULib.ACCESS_SUPERADMIN )
 restartmap:help( "Reloads the level." )
 --
