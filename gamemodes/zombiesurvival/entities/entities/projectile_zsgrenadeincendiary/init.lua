@@ -61,7 +61,8 @@ function ENT:Explode(hitpos, hitnormal)
 		self:EmitSound("weapons/explosions/incendiarygrenade.wav", 85, 100)
 		
 		incflames = ents.Create("env_molotovflame")
-		if not self.PhysicsData then
+		local downtrace = util.QuickTrace( hitpos, Vector(0,0,-72), self)
+		if not downtrace.Hit then
 			ParticleEffect("explosion_flash", hitpos, angle_zero)
 			ParticleEffect("g_f_flash_1", hitpos, angle_zero)
 			ParticleEffect("g_f_fireball_2", hitpos, angle_zero)
@@ -70,10 +71,11 @@ function ENT:Explode(hitpos, hitnormal)
 			ParticleEffect("g_f_sparks", hitpos, angle_zero)
 			ParticleEffect("molo_embers_2", hitpos, angle_zero)
 		elseif incflames:IsValid() then
+			hitpos = downtrace.HitPos
 			incflames.Ticks = 40
 			incflames.Damage = 9
 			incflames:SetOwner(self.Owner or self:GetOwner())
-			incflames:SetPos(self.PhysicsData.HitPos or self:GetPos())
+			incflames:SetPos(hitpos)
 			incflames:Spawn()
 		ParticleEffect("nmrih_molotov_explosion", hitpos, angle_zero)
 		ParticleEffect("explosion_flash", hitpos, angle_zero)
