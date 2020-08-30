@@ -1,3 +1,4 @@
+--redeem-----
 function ulx.redeem( caller, targets )
 	local affected = {}
 
@@ -20,7 +21,7 @@ redeem:addParam{ type = ULib.cmds.PlayersArg }
 redeem:defaultAccess( ULib.ACCESS_ADMIN )
 redeem:help( "Redeem target(s)" )
 
-
+--force zombie to boss------
 function ulx.forceboss( caller, targets, silent, inPlace )
 	local affected = {}
 
@@ -57,7 +58,7 @@ forceboss:addParam{ type = ULib.cmds.BoolArg, default = false, hint = "respawn i
 forceboss:defaultAccess( ULib.ACCESS_ADMIN )
 forceboss:help( "Respawn target(s) as boss" )
 
-
+--force zombie class-----
 local ZombieClasses
 
 function ulx.forceclass( caller, targets, className, inPlace )
@@ -104,7 +105,7 @@ function ulx.forceclass( caller, targets, className, inPlace )
 	ulx.fancyLogAdmin( caller, "#A forced #T to be #s", affected, className )
 end
 
-
+--wave active-------
 function ulx.waveactive( caller, active )
 	if active ~= gamemode.Call( "GetWaveActive" ) then
 		gamemode.Call( "SetWaveActive", active )
@@ -118,7 +119,7 @@ waveactive:addParam{ type = ULib.cmds.BoolArg, default = false, hint = "active" 
 waveactive:defaultAccess( ULib.ACCESS_ADMIN )
 waveactive:help( "Start or end the wave" )
 
-
+--set wave time------
 function ulx.wavetime( caller, time )
 	time = time * 60
 
@@ -134,8 +135,7 @@ local wavetime = ulx.command( "ZS ULX Commands", "ulx wavetime", ulx.wavetime, "
 wavetime:addParam{ type = ULib.cmds.NumArg, hint = "time", max = 60, ULib.cmds.allowTimeString }
 wavetime:defaultAccess( ULib.ACCESS_ADMIN )
 wavetime:help( "Set time until wave start/end" )
-
-
+--give points--------
 function ulx.givepoints( caller, targets, points )
 	for i = 1, #targets do
 		targets[ i ]:AddFrags( points )
@@ -149,8 +149,24 @@ givepoints:addParam{ type = ULib.cmds.PlayersArg }
 givepoints:addParam{ type = ULib.cmds.NumArg, hint = "points" }
 givepoints:defaultAccess( ULib.ACCESS_ADMIN )
 givepoints:help( "Give points to target(s)" )
+--give ammo------
+function ulx.giveammo(calling_ply, amount, ammotype, target_plys)
+	local affected_plys = {}
+	for i=1, #target_plys do
+		local v = target_plys[ i ]
+		if v:IsValid() and v:Team() == TEAM_HUMAN and v:Alive() then
+			v:GiveAmmo(amount, ammotype)
+		end
+	end
+end
 
-
+local giveammo = ulx.command("Zombie Survival", "ulx giveammo", ulx.giveammo, "!giveammo" )
+giveammo:addParam{ type=ULib.cmds.NumArg, hint="Ammo Amount"}
+giveammo:addParam{ type=ULib.cmds.StringArg, hint="Ammo Type"}
+giveammo:addParam{ type=ULib.cmds.PlayersArg }
+giveammo:defaultAccess(ULib.ACCESS_ADMIN)
+giveammo:help( "Gives the specified ammo to the target player(s)." )
+--give weapon------
 function ulx.giveweapon( caller, targets, weapon, giveAmmo )
 	hook.Add("PlayerCanPickupWeapon", "PlayerCanPickupWeapon.AcceptAll", function(pl, ent) return true end)
 	local affected = {}
@@ -211,3 +227,34 @@ hook.Add( "Initialize", "zs_ulx_cmds",
 		giveweapon:help( "Give weapon to target(s)" )
 	end
 )
+-----respawn dead --------
+
+function ulx.respawn( calling_ply, target_plys )
+
+    local affected_plys = {}
+    for i=1, #target_plys do
+        local pl = target_plys[ i ]
+
+        if ulx.getExclusive( pl, calling_ply ) then
+            ULib.tsayError( calling_ply, ulx.getExclusive( pl, calling_ply ), true )
+        else
+            hook.Call( "PlayerRespawn", GAMEMODE, pl )
+            table.insert( affected_plys, pl )
+        end
+    end
+
+    ulx.fancyLogAdmin( calling_ply, "#A respawn #T", affected_plys )
+end
+local respawn = ulx.command( "Zombie Survival", "ulx respawn", ulx.respawn, "!respawn" )
+respawn:addParam{ type=ULib.cmds.PlayersArg }
+respawn:defaultAccess( ULib.ACCESS_ADMIN )
+respawn:help( "Redeems target(s)." )
+--restart map--------
+function ulx.restartmap(calling_ply)
+	ulx.fancyLogAdmin( calling_ply, "#A restarted the map.")
+	game.ConsoleCommand("changelevel "..string.format(game.GetMap(),".bsp").."\n")
+end
+local restartmap = ulx.command("Zombie Survival", "ulx restartmap", ulx.restartmap, "!restartmap")
+restartmap:defaultAccess( ULib.ACCESS_SUPERADMIN )
+restartmap:help( "Reloads the level." )
+--
