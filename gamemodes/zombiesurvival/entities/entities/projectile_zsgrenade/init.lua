@@ -46,7 +46,7 @@ function ENT:Explode()
 			effectdata:SetNormal(Vector(0, 0, -1))
 		util.Effect("decal_scorch", effectdata)
 
-		self:EmitSound("npc/env_headcrabcanister/explosion.wav", 85, 100)
+		self:EmitSound("weapons/explosions/grenade0"..math.random(2)..".wav", 85, 100)
 		ParticleEffect("dusty_explosion_rockets", pos, angle_zero)
 	end
 end

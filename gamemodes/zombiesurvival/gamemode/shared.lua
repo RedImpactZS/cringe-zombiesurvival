@@ -470,8 +470,10 @@ function GM:PrecacheResources()
 	end
 
 	game.AddParticles("particles/vman_explosion.pcf")
+	game.AddParticles("particles/nmrih_gasoline.pcf")
 
 	PrecacheParticleSystem("dusty_explosion_rockets")
+	PrecacheParticleSystem("nmrih_molotov_explosion")
 end
 
 function GM:ShouldCollide(enta, entb)

@@ -237,6 +237,7 @@ function GM:AddResources()
 	resource.AddFile("resource/fonts/remingtonnoiseless.ttf")
 
 	resource.AddFile("particles/vman_explosion.pcf")
+	resource.AddFile("particles/nmrih_gasoline.pcf")
 
 	for _, filename in pairs(file.Find("materials/zombiesurvival/*.vmt", "GAME")) do
 		resource.AddFile("materials/zombiesurvival/"..filename)
