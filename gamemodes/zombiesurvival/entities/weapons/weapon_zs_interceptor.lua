@@ -48,7 +48,7 @@ SWEP.ConeMin = 1.275
 
 SWEP.WalkSpeed = SPEED_SLOW
 
-SWEP.Tier = 5
+SWEP.Tier = 6
 
 SWEP.IronSightsPos = Vector(-6, 0, 0.4)
 
