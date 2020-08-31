@@ -28,7 +28,7 @@ SWEP.HeadshotMulti = 1.5
 
 SWEP.ChargeDelay = 0.12
 
-SWEP.Tier = 5
+SWEP.Tier = 6
 
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_FIRE_DELAY, -0.01)
 GAMEMODE:AddNewRemantleBranch(SWEP, 1, "'Prometheus' Tau Cannon", "Bounces at low angles, three weaker shots, charges faster, increased fire delay", function(wept)
