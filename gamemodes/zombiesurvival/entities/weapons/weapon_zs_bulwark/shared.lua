@@ -27,7 +27,7 @@ SWEP.ConeMin = 5.25
 
 SWEP.Recoil = 0.5
 
-SWEP.Tier = 5
+SWEP.Tier = 6
 SWEP.MaxStock = 2
 
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_MAX_SPREAD, -0.769)
