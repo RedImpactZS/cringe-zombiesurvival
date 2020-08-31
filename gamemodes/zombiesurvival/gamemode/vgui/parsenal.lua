@@ -749,8 +749,8 @@ function GM:OpenArsenalMenu()
 					tbn = EasyButton(tabpane, trinkets and subcats[i] or ("Tier " .. i), 2, 8)
 					tbn:SetFont(trinkets and "ZSHUDFontSmallest" or "ZSHUDFontSmall")
 					tbn:SetAlpha(start and 255 or 70)
-					tbn:AlignRight((trinkets and -35 or -15) * screenscale -
-						(ispacer - ind) * (ind == 1 and (trinkets and 190 or 110) or 145) * screenscale
+					tbn:AlignRight((trinkets and -35 or 5) * screenscale -
+						(ispacer - ind) * (ind == 1 and (trinkets and 190 or 90) or 100) * screenscale
 					)
 					tbn:AlignTop(trinkets and i <= 3 and 0 or trinkets and 28 or 16)
 					tbn:SetContentAlignment(5)
