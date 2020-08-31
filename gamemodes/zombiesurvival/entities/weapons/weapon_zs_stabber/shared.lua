@@ -63,7 +63,7 @@ end)
 SWEP.ReloadSpeed = 1.3
 SWEP.MeleeFlagged = true
 
-SWEP.Tier = 2
+SWEP.Tier = 3
 
 function SWEP:EmitFireSound()
 	self:EmitSound("weapons/ak47/ak47-1.wav", 75, 76, 0.53)
