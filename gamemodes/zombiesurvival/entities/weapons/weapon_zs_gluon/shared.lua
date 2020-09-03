@@ -25,8 +25,7 @@ GAMEMODE:SetupDefaultClip(SWEP.Primary)
 SWEP.ConeMax = 0
 SWEP.ConeMin = 0
 
-SWEP.Tier = 6
-SWEP.MaxStock = 3
+SWEP.Tier = 5
 
 SWEP.HeatBuildShort = 0.10
 SWEP.HeatBuildLong = 0.045
