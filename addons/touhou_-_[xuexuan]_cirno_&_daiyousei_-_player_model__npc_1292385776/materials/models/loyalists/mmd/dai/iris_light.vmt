@@ -1,0 +1,12 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/loyalists/mmd/dai/koishi_face"
+	
+	"$AmbientOcclusion" "0"	
+	// "$translucent" "0"
+	"$additive" "1"
+	"$model" "1"
+	
+	"$nocull" "1"
+	"$nodecal" "1"
+}

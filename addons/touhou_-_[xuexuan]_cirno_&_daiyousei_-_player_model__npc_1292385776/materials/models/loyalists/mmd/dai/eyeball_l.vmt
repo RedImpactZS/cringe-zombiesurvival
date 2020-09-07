@@ -1,0 +1,23 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/loyalists/mmd/dai/koishi_face"
+
+	// "$phong" "1"
+	// "$phongboost"	"10"
+	// "$phongalbedotint" "1"
+	// "$phongexponenttexture" "models/loyalists/mmd/dai/shader/phong_exp"
+	// "$phongfresnelranges"	"[.01 .01 2]"
+
+	// "$lightwarptexture" "models/loyalists/mmd/dai/shader/face_shader"
+
+	"$halflambert" "1"	
+	"$AmbientOcclusion" "0"	
+	"$nocull" "1"
+	"$nodecal" "1"
+	"$alphatest" "1"
+	"$model" "1"
+	
+	// "$rimlight" "1"
+	// "$rimlightexponent" "3"
+	// "$rimlightboost" "4"
+}

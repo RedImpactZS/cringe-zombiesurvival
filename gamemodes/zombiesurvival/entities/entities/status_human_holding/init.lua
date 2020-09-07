@@ -62,7 +62,7 @@ function ENT:Initialize()
 			object._OriginalMass = objectphys:GetMass()
 
 			objectphys:EnableGravity(false)
-			objectphys:SetMass(2)
+			objectphys:SetMass(100)
 
 			object:SetOwner(owner)
 			object:SetCollisionGroup(COLLISION_GROUP_WEAPON)

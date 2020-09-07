@@ -1,0 +1,11 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/loyalists/mmd/cirno/koishi_face"
+
+	"$halflambert" "1"	
+	"$AmbientOcclusion" "0"	
+	"$nocull" "1"
+	"$nodecal" "1"
+	"$alphatest" "1"
+	"$model" "1"
+}

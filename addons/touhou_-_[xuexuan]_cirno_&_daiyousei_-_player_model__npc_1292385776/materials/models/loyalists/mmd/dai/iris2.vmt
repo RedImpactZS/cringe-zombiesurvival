@@ -1,0 +1,16 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/loyalists/mmd/dai/koishi_face"
+
+	"$halflambert" "1"	
+	"$AmbientOcclusion" "0"	
+	"$nocull" "1"
+	"$nodecal" "1"
+	"$alphatest" "1"
+	"$model" "1"
+	"$no_draw" "1"
+	
+	// "$rimlight" "1"
+	// "$rimlightexponent" "3"
+	// "$rimlightboost" "4"
+}
