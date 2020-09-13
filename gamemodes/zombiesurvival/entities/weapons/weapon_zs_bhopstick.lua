@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 SWEP.Base = "weapon_zs_baseshotgun"
 
-SWEP.PrintName = "Bhop Stick"
+SWEP.PrintName = "Твоя мама"
 SWEP.Description = "Can only fire while looking down, instant fire delay and quick reload speed"
 
 if CLIENT then
@@ -22,14 +22,14 @@ SWEP.CSMuzzleFlashes = false
 SWEP.ReloadDelay = 0.0
 
 SWEP.Primary.Sound = Sound("weapons/shotgun/shotgun_dbl_fire.wav")
-SWEP.Primary.Damage = 27
-SWEP.Primary.NumShots = 6
-SWEP.Primary.Delay = 0.25
+SWEP.Primary.Damage = 12
+SWEP.Primary.NumShots = 8
+SWEP.Primary.Delay = 0.6
 SWEP.Primary.Automatic = true
 
-SWEP.Recoil = 7.5
+SWEP.Recoil = 1
 
-SWEP.Primary.ClipSize = 1
+SWEP.Primary.ClipSize = 2
 SWEP.Primary.Ammo = "buckshot"
 SWEP.Primary.DefaultClip = 28
 
@@ -40,7 +40,7 @@ SWEP.Tier = 5
 
 SWEP.WalkSpeed = SPEED_SLOWER
 SWEP.FireAnimSpeed = 0.4
-SWEP.Knockback = 150
+SWEP.Knockback = 120
 
 SWEP.PumpActivity = ACT_SHOTGUN_PUMP
 SWEP.PumpSound = Sound("Weapon_Shotgun.Special1")
@@ -53,7 +53,7 @@ end
 function SWEP:CanPrimaryAttack()
 	local owner = self:GetOwner()
 
-	if owner:EyeAngles().p < 45 then
+	if owner:EyeAngles().p < 30 then
 		return false
 	end
 
@@ -80,5 +80,12 @@ function SWEP:PrimaryAttack()
 
 	self.IdleAnimation = CurTime() + self:SequenceDuration()
 
-	self:FinishReload()
+	self:SetClip1(self.Primary.ClipSize)
+end
+
+function SWEP:TakePrimaryAmmo()
+end
+
+function SWEP:GetPrimaryAmmoCount()
+	return 1 -- infinite ammo
 end

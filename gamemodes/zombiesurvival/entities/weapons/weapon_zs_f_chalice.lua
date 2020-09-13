@@ -43,3 +43,7 @@ end
 function SWEP:GetPrimaryAmmoCount()
 	return 1 -- infinite ammo
 end
+
+function SWEP:GetFoodEatTime()
+	return self.FoodEatTime
+end
