@@ -16,6 +16,7 @@
 !lua/autorun/ulib_init.lua
 !lua/autorun/server/
 !lua/autorun/server/workshop.lua
+!lua/mapvote/
 !lua/ulx/
 !lua/ulx/**
 !lua/ulib/
