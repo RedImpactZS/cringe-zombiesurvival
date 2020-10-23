@@ -91,6 +91,7 @@ TREE_SUPPORTTREE = 3
 TREE_BUILDINGTREE = 4
 TREE_MELEETREE = 5
 TREE_GUNTREE = 6
+TREE_TRINKETTREE = 7
 
 -- Dummy skill used for "connecting" to their trees.
 SKILL_NONE = 0
@@ -257,6 +258,9 @@ SKILL_STOWAGE = 146
 SKILL_TRUEWOOISM = 147
 SKILL_UNBOUND = 148
 SKILL_SANIC = 149
+SKILL_PULSE1 = 150
+SKILL_PULSE2 = 151
+SKILL_PULSE3 = 152
 
 SKILLMOD_HEALTH = 1
 SKILLMOD_SPEED = 2
@@ -674,6 +678,14 @@ GM:AddSkill(SKILL_BLOODLUST, "Bloodlust", "Gain phantom health equal to half the
 																-2,			4,					{SKILL_LASTSTAND}, TREE_MELEETREE)
 GM:AddSkill(SKILL_BRASH, "Brash", GOOD.."-16% melee swing impact delay\n"..BAD.."-15 speed on melee kill for 10 seconds",
 																6,			0,					{}, TREE_MELEETREE)
+-- Trinket tree
+
+GM:AddSkill(SKILL_PULSE1, "Pulse I", GOOD.."+7% pulse slowe\n",
+																2,      	0,          		{SKILL_NONE, SKILL_PULSE2}, TREE_TRINKETTREE)
+GM:AddSkill(SKILL_PULSE2, "Pulse II", GOOD.."+13% pulse slowe\n",
+																4,      	0,          		{SKILL_PULSE3}, TREE_TRINKETTREE)
+GM:AddSkill(SKILL_PULSE3, "Pulse III", GOOD.."+20% pulse slowe\n",
+																6,      	0,          		{}, TREE_TRINKETTREE)
 
 GM:SetSkillModifierFunction(SKILLMOD_SPEED, function(pl, amount)
 	pl.SkillSpeedAdd = amount
@@ -1277,3 +1289,9 @@ end)
 GM:AddSkillFunction(SKILL_TRUEWOOISM, function(pl, active)
 	pl.TrueWooism = active
 end)
+
+GM:AddSkillModifier(SKILL_PULSE1, SKILLMOD_PULSE_WEAPON_SLOW_MUL, 0.07)
+
+GM:AddSkillModifier(SKILL_PULSE2, SKILLMOD_PULSE_WEAPON_SLOW_MUL, 0.13)
+
+GM:AddSkillModifier(SKILL_PULSE3, SKILLMOD_PULSE_WEAPON_SLOW_MUL, 0.2)
