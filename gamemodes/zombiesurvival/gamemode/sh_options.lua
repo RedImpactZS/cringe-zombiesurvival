@@ -144,6 +144,7 @@ GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			35,				"weapon_zs_crackler")
 GM:AddStartingItem("sling",				ITEMCAT_GUNS,			35,				"weapon_zs_slinger")
 GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			35,				"weapon_zs_z9000")
 GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			35,				"weapon_zs_minelayer")
+GM:AddStartingItem("pogostick",			ITEMCAT_GUNS,			0,				"weapon_zs_pogostick")
 
 GM:AddStartingItem("2pcp",				ITEMCAT_AMMO,			10,				nil,			"28 pistol ammo",				nil,		"ammo_pistol",			function(pl) pl:GiveAmmo(28, "pistol", true) end)
 GM:AddStartingItem("3pcp",				ITEMCAT_AMMO,			15,				nil,			"42 pistol ammo",				nil,		"ammo_pistol",			function(pl) pl:GiveAmmo(42, "pistol", true) end)
@@ -309,6 +310,7 @@ GM:AddPointShopItem("crklr",			ITEMCAT_GUNS,			15,				"weapon_zs_crackler", nil,
 GM:AddPointShopItem("sling",			ITEMCAT_GUNS,			15,				"weapon_zs_slinger", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_slinger") end)
 GM:AddPointShopItem("z9000",			ITEMCAT_GUNS,			15,				"weapon_zs_z9000", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_z9000") end)
 GM:AddPointShopItem("minelayer",		ITEMCAT_GUNS,			15,				"weapon_zs_minelayer", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_minelayer") end)
+GM:AddPointShopItem("minelayer",		ITEMCAT_GUNS,			0,				"weapon_zs_pogostick")
 -- Tier 2
 GM:AddPointShopItem("glock3",			ITEMCAT_GUNS,			30,				"weapon_zs_glock3")
 GM:AddPointShopItem("magnum",			ITEMCAT_GUNS,			30,				"weapon_zs_magnum")
