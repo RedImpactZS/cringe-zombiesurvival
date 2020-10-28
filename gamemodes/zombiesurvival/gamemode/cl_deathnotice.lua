@@ -235,6 +235,8 @@ killicon.Add("weapon_zs_inquisitor", "zombiesurvival/killicons/weapon_zs_inquisi
 killicon.Add("projectile_arrow_inq", "zombiesurvival/killicons/weapon_zs_inquisitor2")
 killicon.Add("weapon_zs_longarm", "zombiesurvival/killicons/weapon_zs_longarm2")
 killicon.AddFont("weapon_zs_minelayer", "zsdeathnotice", "3")
+killicon.AddFont("weapon_zs_zmainGun", "zsdeathnotice", "3")
+killicon.Add("weapon_zs_pogostick", "models/props_wasteland/dockplank01b.mdl")
 killicon.Add("projectile_impactmine", "zombiesurvival/killicons/impact_mine")
 killicon.Add("projectile_impactmine_kin", "zombiesurvival/killicons/weapon_zs_enkindlermine.png")
 killicon.Add("weapon_zs_jackhammer", "zombiesurvival/killicons/weapon_zs_jackhammer2")

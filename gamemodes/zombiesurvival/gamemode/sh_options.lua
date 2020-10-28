@@ -134,16 +134,16 @@ GM.AmmoResupply = table.ToAssoc({"ar2", "pistol", "smg1", "357", "xbowbolt", "bu
 -- Worth --
 -----------
 
-GM:AddStartingItem("pshtr",				ITEMCAT_GUNS,			35,				"weapon_zs_peashooter")
+--GM:AddStartingItem("pshtr",				ITEMCAT_GUNS,			35,				"weapon_zs_peashooter")
 GM:AddStartingItem("btlax",				ITEMCAT_GUNS,			35,				"weapon_zs_battleaxe")
-GM:AddStartingItem("owens",				ITEMCAT_GUNS,			35,				"weapon_zs_owens")
+--GM:AddStartingItem("owens",				ITEMCAT_GUNS,			35,				"weapon_zs_owens")
 GM:AddStartingItem("blstr",				ITEMCAT_GUNS,			35,				"weapon_zs_blaster")
-GM:AddStartingItem("tossr",				ITEMCAT_GUNS,			35,				"weapon_zs_tosser")
+--GM:AddStartingItem("tossr",				ITEMCAT_GUNS,			35,				"weapon_zs_tosser")
 GM:AddStartingItem("stbbr",				ITEMCAT_GUNS,			35,				"weapon_zs_stubber")
-GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			35,				"weapon_zs_crackler")
+--GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			35,				"weapon_zs_crackler")
 GM:AddStartingItem("sling",				ITEMCAT_GUNS,			35,				"weapon_zs_slinger")
 GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			35,				"weapon_zs_z9000")
-GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			35,				"weapon_zs_minelayer")
+--GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			35,				"weapon_zs_minelayer")
 GM:AddStartingItem("pogostick",			ITEMCAT_GUNS,			0,				"weapon_zs_pogostick")
 
 GM:AddStartingItem("2pcp",				ITEMCAT_AMMO,			10,				nil,			"28 pistol ammo",				nil,		"ammo_pistol",			function(pl) pl:GiveAmmo(28, "pistol", true) end)
@@ -173,25 +173,25 @@ GM:AddStartingItem("6scr",				ITEMCAT_AMMO,			25,				nil,			"6 scrap",				nil,		
 
 GM:AddStartingItem("brassknuckles",		ITEMCAT_MELEE,			15,				"weapon_zs_brassknuckles").Model = "models/props_c17/utilityconnecter005.mdl"
 GM:AddStartingItem("zpaxe",				ITEMCAT_MELEE,			35,				"weapon_zs_axe")
-GM:AddStartingItem("crwbar",			ITEMCAT_MELEE,			35,				"weapon_zs_crowbar")
+--GM:AddStartingItem("crwbar",			ITEMCAT_MELEE,			35,				"weapon_zs_crowbar")
 GM:AddStartingItem("stnbtn",			ITEMCAT_MELEE,			35,				"weapon_zs_stunbaton")
 GM:AddStartingItem("csknf",				ITEMCAT_MELEE,			10,				"weapon_zs_swissarmyknife")
 GM:AddStartingItem("zpplnk",			ITEMCAT_MELEE,			10,				"weapon_zs_plank")
 GM:AddStartingItem("zpfryp",			ITEMCAT_MELEE,			25,				"weapon_zs_fryingpan")
 GM:AddStartingItem("zpcpot",			ITEMCAT_MELEE,			25,				"weapon_zs_pot")
 --GM:AddStartingItem("ladel",				ITEMCAT_MELEE,			25,				"weapon_zs_ladel")
-GM:AddStartingItem("pipe",				ITEMCAT_MELEE,			35,				"weapon_zs_pipe")
-GM:AddStartingItem("hook",				ITEMCAT_MELEE,			35,				"weapon_zs_hook")
+--GM:AddStartingItem("pipe",				ITEMCAT_MELEE,			35,				"weapon_zs_pipe")
+--GM:AddStartingItem("hook",				ITEMCAT_MELEE,			35,				"weapon_zs_hook")
 
 local item
 GM:AddStartingItem("medkit",			ITEMCAT_TOOLS,			45,				"weapon_zs_medicalkit")
 GM:AddStartingItem("medgun",			ITEMCAT_TOOLS,			40,				"weapon_zs_medicgun")
-item =
+--item =
 GM:AddStartingItem("strengthshot",		ITEMCAT_TOOLS,			45,				"weapon_zs_strengthshot")
-item.SkillRequirement = SKILL_U_STRENGTHSHOT
-item =
+--item.SkillRequirement = SKILL_U_STRENGTHSHOT
+--item =
 GM:AddStartingItem("antidoteshot",		ITEMCAT_TOOLS,			35,				"weapon_zs_antidoteshot")
-item.SkillRequirement = SKILL_U_ANTITODESHOT
+--item.SkillRequirement = SKILL_U_ANTITODESHOT
 --GM:AddStartingItem("arscrate",			ITEMCAT_DEPLOYABLES,			50,				"weapon_zs_arsenalcrate")
 --.Countables = "prop_arsenalcrate"
 GM:AddStartingItem("resupplybox",		ITEMCAT_DEPLOYABLES,			30,				"weapon_zs_resupplybox")
@@ -272,45 +272,46 @@ GM:AddStartingItem("magnet",			ITEMCAT_TRINKETS,		25,				"trinket_magnet").SubCa
 --GM:AddStartingItem("arsenalpack",		ITEMCAT_TRINKETS,		55,				"trinket_arsenalpack").SubCategory =			ITEMSUBCAT_TRINKETS_SUPPORT
 --GM:AddStartingItem("arsenalpack",		ITEMCAT_TRINKETS,		55,				"trinket_resupplypack").SubCategory =			ITEMSUBCAT_TRINKETS_SUPPORT
 
-GM:AddStartingItem("stone",				ITEMCAT_OTHER,			5,				"weapon_zs_stone")
+GM:AddStartingItem("zmainGun",			ITEMCAT_OTHER,			0,				"weapon_zs_zmainGun")
 GM:AddStartingItem("grenade",			ITEMCAT_OTHER,			30,				"weapon_zs_grenade")
 GM:AddStartingItem("flashbomb",			ITEMCAT_OTHER,			15,				"weapon_zs_flashbomb")
 GM:AddStartingItem("molotov",			ITEMCAT_OTHER,			30,				"weapon_zs_molotov")
 GM:AddStartingItem("betty",				ITEMCAT_OTHER,			30,				"weapon_zs_proxymine")
 GM:AddStartingItem("corgasgrenade",		ITEMCAT_OTHER,			40,				"weapon_zs_corgasgrenade")
-GM:AddStartingItem("crygasgrenade",		ITEMCAT_OTHER,			35,				"weapon_zs_crygasgrenade").SkillRequirement = SKILL_U_CRYGASGREN
+GM:AddStartingItem("crygasgrenade",		ITEMCAT_OTHER,			35,				"weapon_zs_crygasgrenade")--.SkillRequirement = SKILL_U_CRYGASGREN
 GM:AddStartingItem("detpck",			ITEMCAT_OTHER,			35,				"weapon_zs_detpack").Countables = "prop_detpack"
-item =
+--item =
 GM:AddStartingItem("sigfragment",		ITEMCAT_OTHER,			25,				"weapon_zs_sigilfragment")
 item.NoClassicMode = true
-item =
+--item =
 GM:AddStartingItem("corfragment",		ITEMCAT_OTHER,			35,				"weapon_zs_corruptedfragment")
 item.NoClassicMode = true
-item.SkillRequirement = SKILL_U_CORRUPTEDFRAGMENT
-item =
+--item.SkillRequirement = SKILL_U_CORRUPTEDFRAGMENT
+--item =
 GM:AddStartingItem("medcloud",			ITEMCAT_OTHER,			25,				"weapon_zs_mediccloudbomb")
-item.SkillRequirement = SKILL_U_MEDICCLOUD
-item =
+--item.SkillRequirement = SKILL_U_MEDICCLOUD
+--item =
 GM:AddStartingItem("nanitecloud",		ITEMCAT_OTHER,			25,				"weapon_zs_nanitecloudbomb")
-item.SkillRequirement = SKILL_U_NANITECLOUD
+--item.SkillRequirement = SKILL_U_NANITECLOUD
 GM:AddStartingItem("bloodshot",			ITEMCAT_OTHER,			35,				"weapon_zs_bloodshotbomb")
+
 
 ------------
 -- Points --
 ------------
 
 -- Tier 1
-GM:AddPointShopItem("pshtr",			ITEMCAT_GUNS,			15,				"weapon_zs_peashooter", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_peashooter") end)
+--GM:AddPointShopItem("pshtr",			ITEMCAT_GUNS,			15,				"weapon_zs_peashooter", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_peashooter") end)
 GM:AddPointShopItem("btlax",			ITEMCAT_GUNS,			15,				"weapon_zs_battleaxe", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_battleaxe") end)
-GM:AddPointShopItem("owens",			ITEMCAT_GUNS,			15,				"weapon_zs_owens", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_owens") end)
+--GM:AddPointShopItem("owens",			ITEMCAT_GUNS,			15,				"weapon_zs_owens", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_owens") end)
 GM:AddPointShopItem("blstr",			ITEMCAT_GUNS,			15,				"weapon_zs_blaster", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_blaster") end)
-GM:AddPointShopItem("tossr",			ITEMCAT_GUNS,			15,				"weapon_zs_tosser", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_tosser") end)
+--GM:AddPointShopItem("tossr",			ITEMCAT_GUNS,			15,				"weapon_zs_tosser", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_tosser") end)
 GM:AddPointShopItem("stbbr",			ITEMCAT_GUNS,			15,				"weapon_zs_stubber", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_stubber") end)
-GM:AddPointShopItem("crklr",			ITEMCAT_GUNS,			15,				"weapon_zs_crackler", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_crackler") end)
+--GM:AddPointShopItem("crklr",			ITEMCAT_GUNS,			15,				"weapon_zs_crackler", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_crackler") end)
 GM:AddPointShopItem("sling",			ITEMCAT_GUNS,			15,				"weapon_zs_slinger", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_slinger") end)
 GM:AddPointShopItem("z9000",			ITEMCAT_GUNS,			15,				"weapon_zs_z9000", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_z9000") end)
-GM:AddPointShopItem("minelayer",		ITEMCAT_GUNS,			15,				"weapon_zs_minelayer", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_minelayer") end)
-GM:AddPointShopItem("minelayer",		ITEMCAT_GUNS,			0,				"weapon_zs_pogostick")
+--GM:AddPointShopItem("minelayer",		ITEMCAT_GUNS,			15,				"weapon_zs_minelayer", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_minelayer") end)
+GM:AddPointShopItem("pogostick",		ITEMCAT_GUNS,			0,				"weapon_zs_pogostick")
 -- Tier 2
 GM:AddPointShopItem("glock3",			ITEMCAT_GUNS,			30,				"weapon_zs_glock3")
 GM:AddPointShopItem("magnum",			ITEMCAT_GUNS,			30,				"weapon_zs_magnum")
@@ -488,12 +489,12 @@ item.Countables = "prop_ffemitter"
 GM:AddPointShopItem("barricadekit",		ITEMCAT_DEPLOYABLES,	85,				"weapon_zs_barricadekit")
 GM:AddPointShopItem("medkit",			ITEMCAT_TOOLS,			30,				"weapon_zs_medicalkit")
 GM:AddPointShopItem("medgun",			ITEMCAT_TOOLS,			30,				"weapon_zs_medicgun")
-item =
+--item =
 GM:AddPointShopItem("strengthshot",		ITEMCAT_TOOLS,			30,				"weapon_zs_strengthshot")
-item.SkillRequirement = SKILL_U_STRENGTHSHOT
-item =
+--item.SkillRequirement = SKILL_U_STRENGTHSHOT
+--item =
 GM:AddPointShopItem("antidote",			ITEMCAT_TOOLS,			30,				"weapon_zs_antidoteshot")
-item.SkillRequirement = SKILL_U_ANTITODESHOT
+--item.SkillRequirement = SKILL_U_ANTITODESHOT
 GM:AddPointShopItem("medrifle",			ITEMCAT_TOOLS,			55,				"weapon_zs_medicrifle")
 GM:AddPointShopItem("healray",			ITEMCAT_TOOLS,			125,			"weapon_zs_healingray")
 
@@ -574,22 +575,23 @@ GM:AddPointShopItem("grenade",			ITEMCAT_OTHER,			35,				"weapon_zs_grenade")
 GM:AddPointShopItem("childgrenade",		ITEMCAT_OTHER,			34,				"weapon_zs_childgrenade")
 GM:AddPointShopItem("betty",			ITEMCAT_OTHER,			35,				"weapon_zs_proxymine")
 GM:AddPointShopItem("detpck",			ITEMCAT_OTHER,			40,				"weapon_zs_detpack")
-item =
+--item =
 GM:AddPointShopItem("crygasgrenade",	ITEMCAT_OTHER,			40,				"weapon_zs_crygasgrenade")
-item.SkillRequirement = SKILL_U_CRYGASGREN
+--item.SkillRequirement = SKILL_U_CRYGASGREN
 GM:AddPointShopItem("corgasgrenade",	ITEMCAT_OTHER,			45,				"weapon_zs_corgasgrenade")
 GM:AddPointShopItem("sigfragment",		ITEMCAT_OTHER,			30,				"weapon_zs_sigilfragment")
 GM:AddPointShopItem("bloodshot",		ITEMCAT_OTHER,			45,				"weapon_zs_bloodshotbomb")
-item =
+--item =
 GM:AddPointShopItem("corruptedfragment",ITEMCAT_OTHER,			55,				"weapon_zs_corruptedfragment")
 item.NoClassicMode = true
-item.SkillRequirement = SKILL_U_CORRUPTEDFRAGMENT
-item =
+--item.SkillRequirement = SKILL_U_CORRUPTEDFRAGMENT
+--item =
 GM:AddPointShopItem("medcloud",			ITEMCAT_OTHER,			40,				"weapon_zs_mediccloudbomb")
-item.SkillRequirement = SKILL_U_MEDICCLOUD
-item =
+--item.SkillRequirement = SKILL_U_MEDICCLOUD
+--item =
 GM:AddPointShopItem("nanitecloud",		ITEMCAT_OTHER,			40,				"weapon_zs_nanitecloudbomb")
-item.SkillRequirement = SKILL_U_NANITECLOUD
+GM:AddPointShopItem("zmainGun",			ITEMCAT_OTHER,			0,				"weapon_zs_zmainGun")
+--item.SkillRequirement = SKILL_U_NANITECLOUD
 
 -- These are the honorable mentions that come at the end of the round.
 
