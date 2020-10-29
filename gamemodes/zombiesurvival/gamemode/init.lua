@@ -1283,8 +1283,8 @@ function GM:Think()
 				end
 
 				if pl:HasTrinket("regenimplant") and time >= pl.NextRegenTrinket and pl:Health() < healmax then
-					pl.NextRegenTrinket = time + 12
-					pl:SetHealth(math.min(healmax, pl:Health() + 1))
+					pl.NextRegenTrinket = time + 0.5
+					pl:SetHealth(math.min(healmax, pl:Health() + 2))
 				end
 
 				if pl:IsSkillActive(SKILL_BLOODARMOR) and pl.MaxBloodArmor > 0 and time >= pl.NextBloodArmorRegen and pl:GetBloodArmor() < pl.MaxBloodArmor then

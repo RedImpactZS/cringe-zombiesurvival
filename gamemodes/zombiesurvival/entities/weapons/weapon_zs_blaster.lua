@@ -41,7 +41,7 @@ SWEP.PumpSound = Sound("Weapon_M3.Pump")
 SWEP.ReloadSound = Sound("Weapon_Shotgun.Reload")
 
 SWEP.PumpActivity = ACT_SHOTGUN_PUMP
-
+GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_FIRE_DELAY, -0.13, 1)
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_CLIP_SIZE, 1)
 GAMEMODE:AddNewRemantleBranch(SWEP, 1, "'Blaster' Slug Gun", "Single accurate slug round, less total damage", function(wept)
 	wept.Primary.Damage = wept.Primary.Damage * 5.5
@@ -49,6 +49,30 @@ GAMEMODE:AddNewRemantleBranch(SWEP, 1, "'Blaster' Slug Gun", "Single accurate sl
 	wept.ConeMin = wept.ConeMin * 0.15
 	wept.ConeMax = wept.ConeMax * 0.3
 end)
+GAMEMODE:AddNewRemantleBranch(SWEP, 2, "'Scrapster' Slug Gun", "Gives scrap for kill, but harms owner", function(wept)
+	wept.Primary.Damage = wept.Primary.Damage * 0.9
+	wept.ConeMin = wept.ConeMin * 0.3
+	wept.ConeMax = wept.ConeMax * 0.6
+	wept.Primary.Automatic = true
+	function wept:OnZombieKilled(zombie)
+	local killer = self:GetOwner()
+
+	if killer:IsValid() then
+		local pos = killer:GetPos()
+		local keks = zombie:GetMaxHealth() / 10
+		util.BlastDamagePlayer(self, killer, pos, 50, keks, DMG_ALWAYSGIB)
+
+		local effectdata = EffectData()
+			effectdata:SetOrigin(pos)
+		util.Effect("Explosion", effectdata, true, true)
+		
+		if SERVER then
+        killer:GiveAmmo(math.ceil(zombie:GetMaxHealth()/10), "scrap")
+	end
+end
+end
+end)
+
 
 function SWEP:SendWeaponAnimation()
 	self:SendWeaponAnim(ACT_VM_PRIMARYATTACK)

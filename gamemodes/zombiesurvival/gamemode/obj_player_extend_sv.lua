@@ -242,7 +242,7 @@ function meta:ProcessDamage(dmginfo)
 	end
 
 	if dmginfo:GetDamage() > 0 and not self:HasGodMode() then
-		self.NextRegenTrinket = CurTime() + 12
+		self.NextRegenTrinket = CurTime() + 2
 
 		self.ShouldFlinch = true
 	end

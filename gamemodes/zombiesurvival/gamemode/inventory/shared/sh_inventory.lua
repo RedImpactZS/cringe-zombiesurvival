@@ -176,8 +176,8 @@ GM:AddSkillModifier(trinket, SKILLMOD_HEALTH, 10)
 GM:AddSkillModifier(trinket, SKILLMOD_HEALING_RECEIVED, 0.05)
 trinketwep.PermitDismantle = true
 
-trinket = GM:AddTrinket("Vitality Bank", "vitpackageii", false, hpveles, hpweles, 4, "+21 maximum health\n+6% healing received")
-GM:AddSkillModifier(trinket, SKILLMOD_HEALTH, 21)
+trinket = GM:AddTrinket("Heart of Terrasque", "vitpackageii", false, hpveles, hpweles, 4, "x2 maximum health\n+6% healing received")
+GM:AddSkillModifier(trinket, SKILLMOD_HEALTH, 200)
 GM:AddSkillModifier(trinket, SKILLMOD_HEALING_RECEIVED, 0.06)
 
 trinket, trinketwep = GM:AddTrinket("Blood Transfusion Pack", "bloodpack", false, hpveles, hpweles, 2, "Generates 20 blood armor if health falls bellow 50%\nConsumes itself on activation.", nil, 15)
@@ -189,7 +189,7 @@ trinketwep.PermitDismantle = true
 
 GM:AddSkillModifier(GM:AddTrinket("Blood Bank", "cardpackageii", false, hpveles, hpweles, 4, "+30 maximum blood armor"), SKILLMOD_BLOODARMOR, 30)
 
-GM:AddTrinket("Regeneration Implant", "regenimplant", false, hpveles, hpweles, 3, "Heals 1 health every 12 seconds provided no damage was taken recently")
+GM:AddTrinket("Regeneration Implant", "regenimplant", false, hpveles, hpweles, 3, "Heals 1 health every 0.5 seconds provided no damage was taken recently")
 
 trinket, trinketwep = GM:AddTrinket("Bio Cleanser", "biocleanser", false, hpveles, hpweles, 2, "Blocks one harmful status effect every 20 seconds")
 trinketwep.PermitDismantle = true
