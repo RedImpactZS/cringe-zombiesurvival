@@ -24,7 +24,7 @@ D3bot.BotJumpAntichance = 25
 D3bot.BotDuckAntichance = 25
 D3bot.FaceTargetOffshootFactor = 0.2			-- Factor that reduces the offshoot when the target is within `D3bot.BotAttackDistMin`. Increase value to prevent bots from "locking" onto target. A value of 1.6 should yield azBot like behavior, tweak it as you like.
 
-D3bot.ZombiesPerPlayer = 0.3
+D3bot.ZombiesPerPlayer = 1.0
 D3bot.ZombiesPerPlayerMax = 2.0			-- Limits amount of zombies to this zombie/player ratio. (ZombiesCountAddition is not calculated in)
 D3bot.ZombiesPerPlayerWave = 0.20
 D3bot.ZombiesPerMinute = 0
