@@ -1,5 +1,3 @@
-CLASS.Base = "boss_niggerTeleporter"
-
 CLASS.Name = "NIGGER TELEPORTER"
 CLASS.TranslationName = "class_telenigga"
 CLASS.Description = "description_telenigga"
@@ -13,7 +11,7 @@ CLASS.Speed = 200
 CLASS.CanTaunt = true
 
 CLASS.FearPerInstance = 1
-
+  
 CLASS.Points = 30
 
 CLASS.SWEP = "weapon_zs_telenigga"

@@ -68,9 +68,9 @@ function GM:AddSkillModifier(skillid, modifier, amount)
 		end
 	end
 
-	self.SkillModifiers[skillid][modifier] = tempAmount
+	--self.SkillModifiers[skillid][modifier] = tempAmount
 end
-
+ 
 function GM:AddSkillFunction(skillid, func)
 	self.SkillFunctions[skillid] = self.SkillFunctions[skillid] or {}
 	table.insert(self.SkillFunctions[skillid], func)
