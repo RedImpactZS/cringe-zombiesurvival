@@ -28,7 +28,7 @@ SWEP.Primary.Damage = 43
 SWEP.HeadshotMulti = 2
 SWEP.Primary.NumShots = 1
 SWEP.Primary.Delay = 0.65
-SWEP.TracerName = "tracer_pcutterorange"
+SWEP.TracerName = "tracer_colossusnew"
 SWEP.Primary.ClipSize = 15
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "pulse"
@@ -76,6 +76,10 @@ end
 
 
 function SWEP.BulletCallback(attacker, tr, dmginfo)
+
+    if tr.HitWorld then
+		util.Decal("FadingScorch", tr.HitPos + tr.HitNormal, tr.HitPos - tr.HitNormal)
+	end
     
 	local ent = tr.Entity
 	if ent:IsValidZombie() then
@@ -91,6 +95,9 @@ function SWEP.BulletCallback(attacker, tr, dmginfo)
 		effectdata:SetOrigin(tr.HitPos)
 		effectdata:SetNormal(tr.HitNormal)
 	util.Effect("hit_orangenew", effectdata)
+	
+	return {impact = false}
+	
 end
 
 
@@ -98,5 +105,5 @@ if not CLIENT then return end
 
 function SWEP:GetDisplayAmmo(clip, spare, maxclip)
 	local minus = self:GetAltUsage() and 0 or 1
-	return math.max(0, (clip * 2) - minus), spare * 2, maxclip * 1
+	return math.max(0, (clip * 2) - minus), spare * 2, maxclip * 1 -- too lazy to do it right
 end
