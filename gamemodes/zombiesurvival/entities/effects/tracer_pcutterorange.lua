@@ -25,18 +25,7 @@ function EFFECT:Init(data)
 
 	self.QuadPos = self.EndPos + self.HitNormal
 
-	for i=1, 7 do
-		local particle = emitter:Add("effects/blueflare1", self.QuadPos)
-		local vel = VectorRand():GetNormal() * 160
-		particle:SetDieTime(1.5)
-		particle:SetColor(200,120,70)
-		particle:SetStartAlpha(200)
-		particle:SetEndAlpha(0)
-		particle:SetStartSize(11)
-		particle:SetEndSize(0)
-		particle:SetVelocity(vel)
-		particle:SetGravity(vel * -0.7)
-	end
+	
 
 	emitter:Finish()
 end
@@ -56,7 +45,7 @@ function EFFECT:Render()
 	local startpos = self.StartPos
 	local endpos = self.QuadPos
 
-	local size = delta * 50
+	local size = delta * 15
 	render.SetMaterial(matBeam2)
 	render.DrawBeam(startpos, endpos, size * 0.5, 1, 0, self.Color)
 	render.DrawBeam(startpos, endpos, size, 1, 0, self.Color)
