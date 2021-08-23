@@ -4,7 +4,10 @@ ENT.MaxHealth = 2000
 ENT.HealthRegen = 40
 ENT.RegenDelay = 2
 
-ENT.ModelScale = 0.55
+ENT.PosePitch = 0
+ENT.PoseYaw = 0
+
+ENT.ModelScale = 1
 
 ENT.m_NoNailUnfreeze = true
 ENT.NoNails = true
@@ -20,10 +23,46 @@ function ENT:SetSigilCorrupted(corrupt)
 	if SERVER then
 		self:SetCollisionGroup(corrupt and COLLISION_GROUP_DEBRIS_TRIGGER or COLLISION_GROUP_NONE)
 	end
-
 	self:CollisionRulesChanged()
+	self:EnableCollisions(false)
 
 	self:SetDTBool(0, corrupt)
+end
+
+function ENT:GetLocalAnglesToTarget(target)
+	return self:WorldToLocalAngles(self:GetAnglesToTarget(target))
+end
+
+function ENT:GetAnglesToTarget(target)
+	return self:GetAnglesToPos(self:GetTargetPos(target))
+end
+
+function ENT:GetLocalAnglesToPos(pos)
+	return self:WorldToLocalAngles(self:GetAnglesToPos(pos))
+end
+
+function ENT:GetAnglesToPos(pos)
+	return (pos - self:ShootPos()):Angle()
+end
+
+function ENT:ShootPos()
+	local attachid = self:LookupAttachment("eyes")
+	if attachid then
+		local attach = self:GetAttachment(attachid)
+		if attach then return attach.Pos end
+	end
+
+	return self:DefaultPos()
+end
+
+function ENT:CalculatePoseAngles()
+	local target = LocalPlayer()
+	local angm = self:GetScanMaxAngle()
+	if target:IsValid() then
+		local ang = self:GetLocalAnglesToTarget(target)
+		self.PoseYaw = math.Approach(self.PoseYaw, math.Clamp(math.NormalizeAngle(ang.yaw), -60 * angm, 60 * angm), deltatime * 140)
+		self.PosePitch = math.Approach(self.PosePitch, math.Clamp(math.NormalizeAngle(ang.pitch), -15 * angm, 15 * angm), deltatime * 100)
+	end
 end
 
 function ENT:GetSigilCorrupted()

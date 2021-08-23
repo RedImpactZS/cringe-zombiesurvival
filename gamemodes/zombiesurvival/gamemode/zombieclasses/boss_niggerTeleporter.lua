@@ -42,21 +42,20 @@ local matBlack = CreateMaterial("shadowlurkersheet", "UnlitGeneric", {["$basetex
 local vecEyeLeft = Vector(8, -5.5, -1.5)
 local vecEyeRight = Vector(8, -5.5, 1.5)
 
-local owner = self:GetOwner()
 
 function CLASS:PrePlayerDraw(pl)
 	render_SetBlend(1)
-	owner:SetModel("models/props_junk/wood_crate001a.mdl")
-	owner:SetColor(colBlack) 
-	owner:SetRenderMode( RENDERMODE_TRANSCOLOR )
+	self:GetOwner():SetModel("models/props_junk/wood_crate001a.mdl")
+	self:GetOwner():SetColor(colBlack) 
+	self:GetOwner():SetRenderMode( RENDERMODE_TRANSCOLOR )
 	render_SetColorModulation(0, 0, 0)
 end
 
 function CLASS:PostPlayerDraw(pl)
 	render_SetBlend(1)
-	owner:SetModel("models/props_junk/wood_crate001a.mdl")
-	owner:SetColor(colBlack) 
-	owner:SetRenderMode( RENDERMODE_TRANSCOLOR )
+	self:GetOwner():SetModel("models/props_junk/wood_crate001a.mdl")
+	self:GetOwner():SetColor(colBlack) 
+	self:GetOwner():SetRenderMode( RENDERMODE_TRANSCOLOR )
 	render_SetColorModulation(0, 0, 0)
 end
 

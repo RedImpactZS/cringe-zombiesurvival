@@ -510,7 +510,7 @@ local spawngreen = 0
 local matFearMeter = Material("zombiesurvival/fearometer")
 local matNeedle = Material("zombiesurvival/fearometerneedle")
 local matEyeGlow = Material("Sprites/light_glow02_add_noz")
-local matSigil = Material("zombiesurvival/sigil.png")
+local matSigil = Material("zombiesurvival/cirni.png")
 local matArsenal = Material("zombiesurvival/arsenalcrate.png")
 local matResupply = Material("zombiesurvival/resupply.png")
 local matRemantler = Material("zombiesurvival/remantler.png")
@@ -606,12 +606,12 @@ function GM:DrawFearMeter(power, screenscale)
 				end
 
 				surface_SetMaterial(matSigil)
-				surface_DrawTexturedRectRotated(sigx, sigy, sigwid, sighei, angle_current + 90)
+				surface_DrawTexturedRectRotated(sigx, sigy, 128, sighei, angle_current + 90)
 
 				if corrupt then
 					surface_SetMaterial(matCrossout)
 					surface_SetDrawColor(220, 0, 0, 220)
-					surface_DrawTexturedRect(sigx - sigwid / 2, sigy - sighei / 2, sigwid, sighei)
+					surface_DrawTexturedRect(sigx - sigwid / 2, sigy - sighei / 2, 128, sighei)
 				end
 
 				angle_current = angle_current + angle_step

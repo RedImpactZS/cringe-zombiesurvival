@@ -1,0 +1,14 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "tadano/fumo/pack/cirno"
+	"$nocull" 1
+	"$model" 1
+	"$nodecal" 1
+	"$alphatest" 1
+	"$halflambert" 1
+
+	"$lightwarptexture" "tadano/fumo/pack/cartoon_shader"
+
+
+
+}

@@ -4,14 +4,15 @@ ENT.HealthLock = 0
 
 function ENT:Initialize()
 	self:DrawShadow(false)
-	self:SetRenderFX(kRenderFxDistort)
+	//self:SetRenderFX(kRenderFxDistort)
 
-	self:SetModel("models/kleiner.mdl")
-	self:PhysicsInitBox(Vector(-16.285, -16.285, -0.29) * self.ModelScale, Vector(16.285, 16.285, 104.29) * self.ModelScale)
+	self:SetModel("models/fumo/cirno.mdl")
+	
+	self:PhysicsInitBox(Vector(4, 4, 60), Vector(4, 4, 60))
 	self:SetUseType(SIMPLE_USE)
-
-	self:CollisionRulesChanged()
-
+	self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+	self:CollisionRulesChanged(false)
+	
 	local phys = self:GetPhysicsObject()
 	if phys:IsValid() then
 		phys:EnableMotion(false)
@@ -22,15 +23,12 @@ function ENT:Initialize()
 	self:SetSigilHealthRegen(self.HealthRegen)
 	self:SetSigilLastDamaged(0)
 
-	local ent = ents.Create("prop_prop_blocker")
-	if ent:IsValid() then
-		ent:SetPos(self:GetPos())
-		ent:SetAngles(self:GetAngles())
-		ent:Spawn()
-		ent:SetOwner(self)
-		--ent:SetParent(self) -- Prevents collisions
-		self:DeleteOnRemove(ent)
-	end
+	self:SetPos(self:GetPos() + Vector(0, 0, 30))
+
+end
+
+function ENT:Think()
+	
 end
 
 function ENT:Use(pl)
